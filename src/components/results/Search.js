@@ -3,13 +3,13 @@ import TwitterContext from "../../context/twitter/twitterContext";
 
 const Search = () => {
   const twitterContext = useContext(TwitterContext);
-  const [text, setText] = useState("");
+  const [text, setText, searchPosts] = useState("");
   const onSubmit = e => {
     e.preventDefault();
     if (text === "") {
       console.log("Please enter something");
     } else {
-      twitterContext.twitterSearch(text);
+      twitterContext.searchPosts(text);
       setText("");
     }
   };

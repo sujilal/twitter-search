@@ -1,20 +1,24 @@
 import React, { useContext, useEffect } from "react";
 import ResultItem from "./ResultItem";
+import Preloader from "../layouts/Preloader";
 import TwitterContext from "../../context/twitter/twitterContext";
 
 const Results = () => {
-  useEffect(() => {});
-
   const twitterContext = useContext(TwitterContext);
-  const { loading, results } = twitterContext;
+  const { posts, getPosts, loading } = twitterContext;
+
+  useEffect(() => {
+    getPosts();
+    // eslint-disable-next-line
+  }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <Preloader />;
   } else {
     return (
       <div>
-        {results.map(result => (
-          <ResultItem key={result.id} result={result} />
+        {posts.map(data => (
+          <ResultItem key={data.id} data={data} />
         ))}
       </div>
     );

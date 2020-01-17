@@ -77,31 +77,31 @@
 /* Result lists */
 .card {
   margin-top: 30px;
+  background-color: #ffffff;
+  border: 0px solid #fff;
+  box-shadow: 2px 4px 10px 0 rgba(0, 34, 51, 0.05),
+    2px 4px 10px 0 rgba(0, 34, 51, 0.05);
+  border-radius: 0.15rem;
 }
 
-.card-header {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.card img {
+.card .img-fluid {
   width: 50px;
+  height: auto;
 }
 
-.pl-2,
-.px-2 {
-  padding-left: 0.1rem !important;
-  padding: 10px;
-}
-.card-title {
-  margin-bottom: 0.15rem;
-  font-size: 12px;
-  color: darkgray;
-  font-weight: 500;
+.card .h3,
+h3 {
+  font-size: 0.75rem;
+  color: #6c757d;
 }
 
-.span-txt {
-  margin: 10px;
+.media-body {
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.media-body p {
+  margin-top: 0;
+  margin-bottom: 0rem;
 }

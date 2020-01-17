@@ -1,18 +1,24 @@
-import { SEARCH_KEYWORD, SET_LOADING, CLEAR_RESULTS } from "../twitter/types";
+import {
+  GET_POSTS,
+  SEARCH_KEYWORD,
+  SET_LOADING,
+  CLEAR_RESULTS,
+  POST_ERRORS
+} from "../twitter/types";
 
 export default (state, action) => {
   switch (action.type) {
-    case SEARCH_KEYWORD:
+    case GET_POSTS:
       return {
         ...state,
-        results: action.payload,
+        posts: action.payload,
         loading: false
       };
 
-    case CLEAR_RESULTS:
+    case SEARCH_KEYWORD:
       return {
         ...state,
-        results: [],
+        posts: action.payload,
         loading: false
       };
 
@@ -21,6 +27,7 @@ export default (state, action) => {
         ...state,
         loading: true
       };
+
     default:
       return state;
   }
