@@ -11,9 +11,9 @@ const ResultItem = ({ data: { name, text, created_at, user } }) => {
           <ul className="list-group pmd-list">
             <li className="list-group-item d-flex flex-row">
               {/* Avatar */}
-              <a href="demo" className="pmd-avatar-list-img">
+              <span className="pmd-avatar-list-img">
                 <img src={user.profile_image_url} alt="Profile" />
-              </a>
+              </span>
               {/* Body */}
               <div className="media-body">
                 <h3 className="pmd-list-title">
