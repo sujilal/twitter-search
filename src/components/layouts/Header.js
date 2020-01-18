@@ -1,21 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Timer from "react-compound-timer";
+import TwitterContext from "../../context/twitter/twitterContext";
 
 const Header = () => {
-  const counter = (
-    <li className="nav-item">
-      <p>
-        Auto refresh in{" "}
-        <span>
-          {" "}
-          <Timer initialTime={3000} direction="backward">
-            <Timer.Seconds />
-          </Timer>
-        </span>{" "}
-        Seconds
-      </p>
-    </li>
-  );
+  const twitterContext = useContext(TwitterContext);
+  const { loading } = twitterContext;
 
   return (
     <div>
@@ -25,7 +14,24 @@ const Header = () => {
         </a>
 
         <div className="collapse navbar-collapse " id="collapsibleNavbar">
-          <ul className="navbar-nav ml-auto ">{counter}</ul>
+          <ul className="navbar-nav ml-auto ">
+            <li className="nav-item">
+              <p>
+                Auto refresh in{" "}
+                {!loading ? (
+                  <span>
+                    <Timer initialTime={30000} direction="backward">
+                      <Timer.Seconds onReset />
+                    </Timer>
+                  </span>
+                ) : (
+                  " 0 "
+                )}{" "}
+                {""}
+                Seconds
+              </p>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
