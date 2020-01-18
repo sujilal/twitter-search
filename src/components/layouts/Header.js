@@ -8,7 +8,7 @@ const Header = () => {
         Auto refresh in{" "}
         <span>
           {" "}
-          <Timer initialTime={0}>
+          <Timer initialTime={3000} direction="backward">
             <Timer.Seconds />
           </Timer>
         </span>{" "}
