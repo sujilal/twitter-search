@@ -2,20 +2,12 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import TwitterContext from "./twitterContext";
 import TwitterReducer from "./twitterReducer";
-import {
-  GET_POSTS,
-  SEARCH_KEYWORD,
-  SET_LOADING,
-  CLEAR_RESULTS,
-  POST_ERRORS
-} from "../twitter/types";
+import { GET_POSTS, SEARCH_KEYWORD, SET_LOADING } from "../twitter/types";
 
 const TwitterState = props => {
   const initialState = {
     posts: [],
-    results: [],
-    loading: false,
-    error: null
+    loading: false
   };
 
   const [state, dispatch] = useReducer(TwitterReducer, initialState);
@@ -23,11 +15,9 @@ const TwitterState = props => {
   // Get Posts
   const getPosts = async () => {
     setLoading();
-
     const res = await axios.get(
       `https://aravindtwitter.herokuapp.com/twittersearch?key=adobe`
     );
-
     dispatch({
       type: GET_POSTS,
       payload: res.data.statuses
@@ -55,7 +45,6 @@ const TwitterState = props => {
     <TwitterContext.Provider
       value={{
         posts: state.posts,
-        results: state.results,
         loading: state.loading,
         getPosts,
         searchPosts,

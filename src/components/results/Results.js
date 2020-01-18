@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import ResultItem from "./ResultItem";
 import Preloader from "../layouts/Preloader";
 import TwitterContext from "../../context/twitter/twitterContext";
@@ -16,11 +16,11 @@ const Results = () => {
     return <Preloader />;
   } else {
     return (
-      <div>
+      <Fragment>
         {posts.map(data => (
           <ResultItem key={data.id} data={data} />
         ))}
-      </div>
+      </Fragment>
     );
   }
 };

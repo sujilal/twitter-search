@@ -3,7 +3,7 @@ import TwitterContext from "../../context/twitter/twitterContext";
 
 const Search = () => {
   const twitterContext = useContext(TwitterContext);
-  const [text, setText, searchPosts] = useState("");
+  const [text, setText] = useState("");
   const onSubmit = e => {
     e.preventDefault();
     if (text === "") {

@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ResultItem = ({
-  data: { name, text, created_at, profile_image_url }
-}) => {
+const ResultItem = ({ data: { name, text, created_at, user } }) => {
   return (
     <div>
       <div className="container">
@@ -14,13 +12,7 @@ const ResultItem = ({
             <li className="list-group-item d-flex flex-row">
               {/* Avatar */}
               <a href="demo" className="pmd-avatar-list-img">
-                <img
-                  alt="Profile"
-                  data-src="holder.js/40x40"
-                  className="img-fluid"
-                  src={profile_image_url}
-                  data-holder-rendered="true"
-                />
+                <img src={user.profile_image_url} alt="Profile" />
               </a>
               {/* Body */}
               <div className="media-body">

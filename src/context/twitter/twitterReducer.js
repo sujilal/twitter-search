@@ -1,10 +1,4 @@
-import {
-  GET_POSTS,
-  SEARCH_KEYWORD,
-  SET_LOADING,
-  CLEAR_RESULTS,
-  POST_ERRORS
-} from "../twitter/types";
+import { GET_POSTS, SEARCH_KEYWORD, SET_LOADING } from "../twitter/types";
 
 export default (state, action) => {
   switch (action.type) {
